@@ -72,20 +72,26 @@ $ bundle install
 After the installation process has finished. It's time to start the Metasploit console again.
 
 $ msfconsole
+
 This time the startup should be successful. On the Metasploit console we can check the database connection.
+
 msf > db_status
 [*] postgresql connected to msf
 
 Try to search an exploit. If the caching process hasn't been finished it will take some time to list the available modules.
+
 msf > search windows
 [!] Database not connected or cache not built, using slow search
 
 After the cache has been initialized successfully the search should be much faster.
+
 msf > search windows
 [...]
 
 On the first startup Metasploit Framework automatically creates additional files and folders in the ~/.msf4 directory.
+
 $ ls -l ~/.msf4
+
 total 28
 -rw-r--r-- 1 user user  150 31. Mar 09:13 database.yml
 -rw-r--r-- 1 user user  267 31. Mar 09:45 history
@@ -96,12 +102,16 @@ drwxr-xr-x 2 user user 4096 31. Mar 09:32 modules
 drwxr-xr-x 2 user user 4096 31. Mar 09:32 plugins
 
 After a reboot make sure the database is running, enter the RVM environment and start the Metasploit console.
+
 $ sudo systemctl status postgresql
 ● postgresql.service - PostgreSQL database server
    Loaded: loaded (/usr/lib/systemd/system/postgresql.service; disabled)
    Active: inactive (dead)
+   
 $ sudo systemctl start postgresql
+
 $ source ~/.rvm/scripts/rvm
+
 $ msfconsole
 
 
