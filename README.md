@@ -93,20 +93,32 @@ On the first startup Metasploit Framework automatically creates additional files
 $ ls -l ~/.msf4
 
 total 28
+
 -rw-r--r-- 1 user user  150 31. Mar 09:13 database.yml
+
 -rw-r--r-- 1 user user  267 31. Mar 09:45 history
+
 drwxr-xr-x 2 user user 4096 31. Mar 09:32 local
+
 drwxr-xr-x 3 user user 4096 31. Mar 09:32 logs
+
 drwxr-xr-x 2 user user 4096 31. Mar 09:32 loot
+
 drwxr-xr-x 2 user user 4096 31. Mar 09:32 modules
+
 drwxr-xr-x 2 user user 4096 31. Mar 09:32 plugins
+
 
 After a reboot make sure the database is running, enter the RVM environment and start the Metasploit console.
 
 $ sudo systemctl status postgresql
+
 ● postgresql.service - PostgreSQL database server
+
    Loaded: loaded (/usr/lib/systemd/system/postgresql.service; disabled)
+   
    Active: inactive (dead)
+   
    
 $ sudo systemctl start postgresql
 
